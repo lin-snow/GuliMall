@@ -1,0 +1,10 @@
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: admin-root
+#          uri: lb://renren-fast
+#          predicates:
+#            - Path=/api/**
+#          filters:
+#            - RewritePath=/api/(?<segment>.*), /renrenfast/$\{segment}
